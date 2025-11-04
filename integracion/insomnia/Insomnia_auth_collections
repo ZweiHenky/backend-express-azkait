@@ -1,0 +1,153 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_edd76543d81942e49011c33e9c835368
+  created: 1747759533310
+  modified: 1747759533310
+collection:
+  - name: Insomnia_jobs_collections
+    meta:
+      id: fld_24b016bda12741d19a674a3962a688cc
+      created: 1753728989271
+      modified: 1753730177797
+      sortKey: -1753728989271
+  - name: Insomnia_candidature_collections
+    meta:
+      id: fld_76ea205658c54d69b7e9ec14c518f455
+      created: 1753730210312
+      modified: 1753730210312
+      sortKey: -1753730210312
+  - name: Insomnia_candidate_collections
+    meta:
+      id: fld_2514706eca5b4c65a3d3d2738d327492
+      created: 1753730759259
+      modified: 1753730759259
+      sortKey: -1753730759259
+  - name: Insomnia_company_collections
+    meta:
+      id: fld_be6f2535c2364fb291bf0518580367e5
+      created: 1753730998942
+      modified: 1753730998942
+      sortKey: -1753730998942
+  - name: Insomnia_auth_collections
+    meta:
+      id: fld_7c8e6b2ce75e4151a1429211082ba221
+      created: 1753731154495
+      modified: 1753731154495
+      sortKey: -1753731154495
+    children:
+      - url: https://backendplatformazkait-production-580a.up.railway.app/api/v1/Auth/register
+        name: Registrar talento
+        meta:
+          id: req_70d0c77244da4874831b4c03c81a85ca
+          created: 1748017475055
+          modified: 1753731181090
+          isPrivate: false
+          sortKey: -1753731172475
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_762d55af1d0f44f6a95e1904dd52b4fc
+              name: email
+              value: edher_test0018@gmail.com
+              disabled: false
+            - id: pair_8cff005deaa44590b4035265d7f91af7
+              name: password
+              value: "123456789"
+              disabled: false
+            - id: pair_da3485c8333840b3b66786dd4d37c808
+              name: name
+              value: Nombre Test
+              disabled: false
+            - id: pair_c14f773504b54efa80c5b9f102a7d884
+              name: lastName
+              value: Apellido Test
+              disabled: false
+            - id: pair_3ec4a8054051452f96760148613fba29
+              name: phone
+              value: "00123"
+              disabled: false
+            - id: pair_4a12aaa0228f4fd79cdbc7f85778291f
+              name: pregunta_referencia
+              value: Facebook
+              disabled: false
+            - id: pair_1e1f16534cbc47149f95fc35fa10eaf4
+              name: cv
+              disabled: false
+              type: file
+              fileName: C:\Users\Edher\Downloads\Currículum Vitae CV de Administración
+                Minimalista Gris (1).pdf
+            - id: pair_a5287cd96d874dca9edda7cfa68982c2
+              name: url_linkedin
+              value: https://www.linkedin.com/in/ejemplo
+              disabled: false
+            - id: pair_86ee1d9a33d34d068de118cdaa8a83f4
+              name: id_professionalProfile_fk
+              value: "[1]"
+              disabled: false
+            - id: pair_04341901684340da9f58f55a851c78bf
+              name: rolId_fk
+              value: "1"
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:4000/api/v1/auth/login
+        name: Login de talento
+        meta:
+          id: req_19dc0fdb22ca49048478e1368b52b592
+          created: 1748908757294
+          modified: 1753731172442
+          isPrivate: false
+          sortKey: -1753731172375
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email" : "edher_test0017@gmail.com",
+            	"password" : "123456789"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Insomnia_authCompany_collections
+    meta:
+      id: fld_144b0aec34504f2e826f934f7e81b35a
+      created: 1753731223206
+      modified: 1753731223206
+      sortKey: -1753731223206
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533313
+    modified: 1747759533313
+environments:
+  name: Base Environment
+  meta:
+    id: env_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533312
+    modified: 1747759533312
+    isPrivate: false

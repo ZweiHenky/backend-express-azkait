@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  rolId_fk              Int
+  createdAt             DateTime    @default(now()) @db.Timestamp(6)
+  email                 String      @unique
+  email_validate        Boolean     @default(false)
+  id                    Int         @id @default(autoincrement())
+  lastName              String
+  location              String?
+  name                  String
+  password              String
+  phone                 String      @unique
+  question_reference_id Int
+  candidate             Candidate?  @relation("UserToCandidate")
+  company               Company?    @relation("UserToCompany")
+  question_reference    QuestionRef @relation(fields: [question_reference_id], references: [id])
+  rol_user_reference    Rol         @relation(fields: [rolId_fk], references: [id])
+}
+
+model Candidate {
+  userId_fk         Int                             @unique
+  url_linkedin      String?
+  cv_url            String
+  id_viterbit       String                          @unique
+  id                Int                             @id @default(autoincrement())
+  id_user_reference User                            @relation("UserToCandidate", fields: [userId_fk], references: [id])
+  candidateProfiles Candidate_ProfessionalProfile[]
+}
+
+model Candidate_ProfessionalProfile {
+  id_candidate_fk               Int
+  id_professionalProfile_fk     Int
+  candidate_reference           Candidate           @relation(fields: [id_candidate_fk], references: [id])
+  professionalProfile_reference ProfessionalProfile @relation(fields: [id_professionalProfile_fk], references: [id])
+
+  @@id([id_candidate_fk, id_professionalProfile_fk])
+}
+
+model ProfessionalProfile {
+  id                Int                             @id @default(autoincrement())
+  name              String
+  candidateProfiles Candidate_ProfessionalProfile[]
+}
+
+model Company {
+  userId_fk         Int           @unique
+  id                Int           @id @default(autoincrement())
+  name              String
+  website           String
+  views             Int           @default(0)
+  views_profiles    String        @default("[0]")
+  sector_id         Int
+  sector_reference  Sector        @relation("SectorToCompany", fields: [sector_id], references: [id])
+  user_id_reference User          @relation("UserToCompany", fields: [userId_fk], references: [id])
+  company_jobs      CompanyJobs[]
+}
+
+model Sector {
+  id        Int       @id @default(autoincrement())
+  name      String
+  companies Company[] @relation("SectorToCompany")
+}
+
+model Rol {
+  id    Int    @id @default(autoincrement())
+  name  String
+  users User[]
+}
+
+model QuestionRef {
+  id    Int    @id @default(autoincrement())
+  name  String
+  users User[]
+}
+
+model CompanyJobs {
+  id                Int                @id @default(autoincrement())
+  id_job            String
+  id_company_fk     Int
+  company_reference Company            @relation(fields: [id_company_fk], references: [id])
+}
+

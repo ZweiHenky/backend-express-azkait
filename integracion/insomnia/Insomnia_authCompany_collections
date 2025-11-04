@@ -1,0 +1,96 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_edd76543d81942e49011c33e9c835368
+  created: 1747759533310
+  modified: 1747759533310
+collection:
+  - name: Insomnia_jobs_collections
+    meta:
+      id: fld_24b016bda12741d19a674a3962a688cc
+      created: 1753728989271
+      modified: 1753730177797
+      sortKey: -1753728989271
+  - name: Insomnia_candidature_collections
+    meta:
+      id: fld_76ea205658c54d69b7e9ec14c518f455
+      created: 1753730210312
+      modified: 1753730210312
+      sortKey: -1753730210312
+  - name: Insomnia_candidate_collections
+    meta:
+      id: fld_2514706eca5b4c65a3d3d2738d327492
+      created: 1753730759259
+      modified: 1753730759259
+      sortKey: -1753730759259
+  - name: Insomnia_company_collections
+    meta:
+      id: fld_be6f2535c2364fb291bf0518580367e5
+      created: 1753730998942
+      modified: 1753730998942
+      sortKey: -1753730998942
+  - name: Insomnia_auth_collections
+    meta:
+      id: fld_7c8e6b2ce75e4151a1429211082ba221
+      created: 1753731154495
+      modified: 1753731154495
+      sortKey: -1753731154495
+  - name: Insomnia_authCompany_collections
+    meta:
+      id: fld_144b0aec34504f2e826f934f7e81b35a
+      created: 1753731223206
+      modified: 1753731223206
+      sortKey: -1753731223206
+    children:
+      - url: https://backendplatformazkait-production-14e0.up.railway.app/api/v1/auth/registerCompany
+        name: Register de Company
+        meta:
+          id: req_391b37b78584496bb3d2db06ce929a95
+          created: 1751838132136
+          modified: 1753731230722
+          isPrivate: false
+          sortKey: -1753731230655
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"edher.agaton@azka-it.com",
+            	"password":"Manchester7@",
+            	"name":"ronaldo",
+            	"lastName":"rodriguez",
+            	"pregunta_referencia":"facebook",
+            	"phone":"558166503500",
+            	"rolId_fk": 2,
+            	"company":{
+            		"name":"doze coyote",
+            		"website":"DozeCoyote.com",
+            		"sector": "Tech"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533313
+    modified: 1747759533313
+environments:
+  name: Base Environment
+  meta:
+    id: env_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533312
+    modified: 1747759533312
+    isPrivate: false

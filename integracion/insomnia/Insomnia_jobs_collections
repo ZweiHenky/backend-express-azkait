@@ -1,0 +1,344 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_edd76543d81942e49011c33e9c835368
+  created: 1747759533310
+  modified: 1747759533310
+collection:
+  - name: Insomnia_jobs_collections
+    meta:
+      id: fld_24b016bda12741d19a674a3962a688cc
+      created: 1753728989271
+      modified: 1753730177797
+      sortKey: -1753728989271
+    children:
+      - url: localhost:3000/api/v1/jobs?page=1&pageSize=3
+        name: Consultar trabajos con paginacion
+        meta:
+          id: req_050f5aee16104c1fb5315246a171337d
+          created: 1747845981797
+          modified: 1753730167768
+          isPrivate: false
+          sortKey: -1753729029875
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/v1/jobs/682e44f37891c58ee70e94bd
+        name: Detalle de un trabajo
+        meta:
+          id: req_97d8f64beee94fd9a0a27eeecc6bb03d
+          created: 1747854239928
+          modified: 1753729953435
+          isPrivate: false
+          sortKey: -1753729029850
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/v1/department/6525804e19774e7e82062b78
+        name: Consultar nombre de departamento por su ID
+        meta:
+          id: req_9f14c06e5b924f16bb131d2fc387a580
+          created: 1747860659816
+          modified: 1753731043825
+          isPrivate: false
+          sortKey: -1753729030100
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/v1/jobs/6837a19c4e4315a02c010367
+        name: Listar trabajos por palabra clave con paginacion
+        meta:
+          id: req_375074b2e3004c11af7582336d3576f5
+          created: 1747932003572
+          modified: 1753729072692
+          isPrivate: false
+          sortKey: -1753729029700
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "page": 1,
+              "pageSize": 10,
+              "search": "Java"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/v1/location/6525804e19774e7e82062b78
+        name: Consultar location name en viterbit con su id
+        meta:
+          id: req_d786c134ee15405c8985fc721e6b1dc7
+          created: 1748299888083
+          modified: 1753731249484
+          isPrivate: false
+          sortKey: -1753729029650
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/api/v1/jobs/create
+        name: Crear un Job en viterbit y asociarlo a un id de la base de datos
+        meta:
+          id: req_8d1c2900947e4fafb0bb68d8ad2359b1
+          created: 1749148140271
+          modified: 1753729935780
+          isPrivate: false
+          sortKey: -1753729029900
+        method: POST
+        body:
+          mimeType: application/json
+          text: >
+            {
+              "general_info": {
+                "basic_info": {
+                  "title": "Platafroma Azka external id test",
+                  "description": "decription ...................................................................................................",
+                  "experience_years": 5,
+                  "slots": 10,
+                  "skills": ["Php", "Mysql"],
+                  "requirements": "Requirements....................................................................................................",
+                  "department_id": "6525804e19774e7e82062b78",
+                  "education_type_id": "66150677483da1e87e5351fc",
+                  "department_profile_id": "6525804e19774e7e82062b79"
+                },
+                "location": {
+                  "work_modality": "hybrid",
+                  "address": {
+                    "country": "MX",
+                    "city": "Mexico City",
+                    "state": "Mexico City",
+                    "postal_code": "28043",
+                    "address": "Calle Pedro Alonso 25, 5A"
+                  },
+                  "location_id": "654d5c1df58eb773b104d826"
+                },
+                "contract_info": {
+                  "occupation": "full_time",
+                  "salary_periodicity": "monthly",
+                  "salary_min": {
+                    "amount": 20000,
+                    "currency": "MXN"
+                  },
+                  "salary_max": {
+                    "amount": 15000,
+                    "currency": "MXN"
+                  },
+                  "contract_type_id": "5bede754dea50e8da824565a"
+                },
+                "management": {
+                  "external_id": "ronaldo.aranda@azka-it.com"
+                },
+                "custom_fields": [
+                  {
+                    "type": "single_choice",
+                    "value": "Azkait_Plataforma",
+                    "question_id": "652e9d7209513732220e8a22"
+                  },
+                  {
+                    "type": "multiple_choice",
+                    "value": ["2025"],
+                    "question_id": "65df3d3df2c6dbbbce09c862"
+                  },
+                  {
+                    "type": "multiple_choice",
+                    "question_id": "652ec1f41f1ba29a2b03b519",
+                    "value": ["Juanito Perez"]
+                  },
+                  {
+                    "type": "multiple_choice",
+                    "question_id": "652ebdd42e9eaf0cf50c1db2",
+                    "value": ["Jocelyn Jimenez"]
+                  }
+                ]
+              },
+              "apply_form": {
+                "preferences": {
+                  "email_visibility": "required",
+                  "linkedin_url_visibility": "required",
+                  "phone_visibility": "required",
+                  "cover_letter_visibility": "required",
+                  "cv_visibility": "required",
+                  "picture_visibility": "required",
+                  "location_visibility": "optional",
+                  "gender_visibility": "hidden",
+                  "birthday_visibility": "hidden"
+                },
+                
+                "config": {
+                  "display_on_careers": false,
+                  "show_location": true,
+                  "show_salary": true,
+                  "show_contract_type": false,
+                  "show_sharing_bar": false,
+                  "show_minimum_education": true
+                },
+                "applies_until": "2025-07-31T18:00:00+00:00"
+              },
+            	"id" : 9
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/jobs/company/9?status=draft
+        name: Listar trabajos por ID company y su estatus
+        meta:
+          id: req_8eac4fc22629411e97361a776ec4759a
+          created: 1750357491527
+          modified: 1753729029703
+          isPrivate: false
+          sortKey: -1753729029600
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/jobs/company/counter/5
+        name: Contador de cuantos trabajos tiene una Empresa
+        meta:
+          id: req_b5871f2427674dd9afcb64d983523043
+          created: 1752516888097
+          modified: 1753730776583
+          isPrivate: false
+          sortKey: -1753729030000
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/company/jobs
+        name: Recuperar toda la tabla de company jobs
+        meta:
+          id: req_f4a0a55657a744038b3dc7a090db2263
+          created: 1752803667326
+          modified: 1753729917057
+          isPrivate: false
+          sortKey: -1753729029800
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Insomnia_candidature_collections
+    meta:
+      id: fld_76ea205658c54d69b7e9ec14c518f455
+      created: 1753730210312
+      modified: 1753730210312
+      sortKey: -1753730210312
+  - name: Insomnia_candidate_collections
+    meta:
+      id: fld_2514706eca5b4c65a3d3d2738d327492
+      created: 1753730759259
+      modified: 1753730759259
+      sortKey: -1753730759259
+  - name: Insomnia_company_collections
+    meta:
+      id: fld_be6f2535c2364fb291bf0518580367e5
+      created: 1753730998942
+      modified: 1753730998942
+      sortKey: -1753730998942
+  - name: Insomnia_auth_collections
+    meta:
+      id: fld_7c8e6b2ce75e4151a1429211082ba221
+      created: 1753731154495
+      modified: 1753731154495
+      sortKey: -1753731154495
+  - name: Insomnia_authCompany_collections
+    meta:
+      id: fld_144b0aec34504f2e826f934f7e81b35a
+      created: 1753731223206
+      modified: 1753731223206
+      sortKey: -1753731223206
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533313
+    modified: 1747759533313
+environments:
+  name: Base Environment
+  meta:
+    id: env_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533312
+    modified: 1747759533312
+    isPrivate: false

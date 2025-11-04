@@ -1,0 +1,267 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_edd76543d81942e49011c33e9c835368
+  created: 1747759533310
+  modified: 1747759533310
+collection:
+  - name: Insomnia_jobs_collections
+    meta:
+      id: fld_24b016bda12741d19a674a3962a688cc
+      created: 1753728989271
+      modified: 1753730177797
+      sortKey: -1753728989271
+  - name: Insomnia_candidature_collections
+    meta:
+      id: fld_76ea205658c54d69b7e9ec14c518f455
+      created: 1753730210312
+      modified: 1753730210312
+      sortKey: -1753730210312
+  - name: Insomnia_candidate_collections
+    meta:
+      id: fld_2514706eca5b4c65a3d3d2738d327492
+      created: 1753730759259
+      modified: 1753730759259
+      sortKey: -1753730759259
+    children:
+      - url: localhost:3000/api/v1/candidates/candidateInfo/40
+        name: Informacion del Candidato por el ID de la base
+        meta:
+          id: req_44818b5de98a4c129f54d8251e500672
+          created: 1747759533347
+          modified: 1753730955451
+          isPrivate: false
+          sortKey: -1753730894453
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidates/candidateInfo/68275d98a2f3c06eec048262
+        name: Informacion el candidato por el ID Viterbit
+        meta:
+          id: req_02e20d954e904932bbb8c5f01a3b499a
+          created: 1747767207703
+          modified: 1753730959270
+          isPrivate: false
+          sortKey: -1753730894553
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidates/uploadCV
+        name: Crear un candidato en viterbit con CV file
+        meta:
+          id: req_e9a19174903d425cbdf276d1079025b9
+          created: 1747770572613
+          modified: 1753730950319
+          isPrivate: false
+          sortKey: -1753730894353
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_e6e227182c244909b5077049baaf8445
+              name: file
+              disabled: false
+              type: file
+              fileName: C:\Users\Edher\Downloads\CV-EdherAgaton.pdf
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/professional/
+        name: Recuperar la tabla professionas profile
+        meta:
+          id: req_52ddfc1530a540db817b4d07191cb8fa
+          created: 1748026048114
+          modified: 1753731268431
+          isPrivate: false
+          sortKey: -1753730894378
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidates/searchBulk/
+        name: Buscar candidatos en viterbit por su bulk_id
+        meta:
+          id: req_7686571dac894bd9971104b5c29c5372
+          created: 1748028486553
+          modified: 1753730968196
+          isPrivate: false
+          sortKey: -1753730894653
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"bulk_import_id" : "6833c9b7aa6e5ee35a0f4568"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidates/edit/68505ff9c5cd3099c2038762
+        name: Editar informacion del talento en viterbit
+        meta:
+          id: req_17763f058b804e2b8f95fbff093a4ada
+          created: 1750105693343
+          modified: 1753731243148
+          isPrivate: false
+          sortKey: -1753730894403
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "first_name": "name edit",
+              "last_name": "last name edit",
+              "phone": "+525581665035",
+              "gender": "male",
+              "address": {
+                "country": "MX",
+                "city": "Miguel Hidalgo",
+                "state": "Ciudad de Mexico",
+                "postal_code": "57000",
+                "address": "Calle Nueva"
+              },
+              "picture": {
+                "link": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+              },
+              "curriculum": {
+                "skills": ["sill edit", "skill 2 edit"],
+                "soft_skills": ["soft skill edit", "soft skill 2 edit"]
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidates/recommendations
+        name: Candidatos recomendados, busque por skills y years
+        meta:
+          id: req_c4233a369c5d4fb99a988ee7de1adbc7
+          created: 1750192619127
+          modified: 1753730894358
+          isPrivate: false
+          sortKey: -1753730894253
+        method: POST
+        body:
+          mimeType: application/json
+          text: >
+            {
+              "filters": {
+                "groups": [
+                  {
+                    "filters": [
+                      { "field": "curriculum__skills", "operator": "contains", "value": "php" },
+                      { "field": "curriculum__skills", "operator": "contains", "value": "spring" },
+                      { "field": "curriculum__skills", "operator": "contains", "value": "python" },
+                      { "field": "curriculum__experience_years", "operator": "equals", "value": 2 },
+                      { "field": "curriculum__skills", "operator": "contains", "value": "sql" }
+                    ],
+                    "operator": "and"
+                  }
+                ]
+              },
+              "page": 1,
+              "page_size": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Insomnia_company_collections
+    meta:
+      id: fld_be6f2535c2364fb291bf0518580367e5
+      created: 1753730998942
+      modified: 1753730998942
+      sortKey: -1753730998942
+  - name: Insomnia_auth_collections
+    meta:
+      id: fld_7c8e6b2ce75e4151a1429211082ba221
+      created: 1753731154495
+      modified: 1753731154495
+      sortKey: -1753731154495
+  - name: Insomnia_authCompany_collections
+    meta:
+      id: fld_144b0aec34504f2e826f934f7e81b35a
+      created: 1753731223206
+      modified: 1753731223206
+      sortKey: -1753731223206
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533313
+    modified: 1747759533313
+environments:
+  name: Base Environment
+  meta:
+    id: env_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533312
+    modified: 1747759533312
+    isPrivate: false

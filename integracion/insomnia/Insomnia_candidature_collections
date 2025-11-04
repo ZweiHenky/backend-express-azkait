@@ -1,0 +1,222 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_edd76543d81942e49011c33e9c835368
+  created: 1747759533310
+  modified: 1747759533310
+collection:
+  - name: Insomnia_jobs_collections
+    meta:
+      id: fld_24b016bda12741d19a674a3962a688cc
+      created: 1753728989271
+      modified: 1753730177797
+      sortKey: -1753728989271
+  - name: Insomnia_candidature_collections
+    meta:
+      id: fld_76ea205658c54d69b7e9ec14c518f455
+      created: 1753730210312
+      modified: 1753730210312
+      sortKey: -1753730210312
+    children:
+      - url: localhost:3000/api/v1/candidature/create
+        name: Crear una candidatura
+        meta:
+          id: req_6cfe4ef7332b4f5ca662e110ad352864
+          created: 1747955105593
+          modified: 1753730248049
+          isPrivate: false
+          sortKey: -1753730224748.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "candidate_id": "6830cf51a277b2d1d80f6832",
+              "job_id": "6824e90abb1f765a8702dac4"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidature/search
+        name: Consultar una candidatura por su ID
+        meta:
+          id: req_fae5fee03d024b09896c557725d4ec44
+          created: 1747958443923
+          modified: 1753730244440
+          isPrivate: false
+          sortKey: -1753730224736
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "candidate_id": "6830ca1b90d73378060a9642"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidature/search
+        name: Buscar todas las candidaturas por el id de candidato
+        meta:
+          id: req_1ea9892f324f4335bfb37a8dfc515df1
+          created: 1748377192270
+          modified: 1753730915735
+          isPrivate: false
+          sortKey: -1753730224686
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"candidate__id" : "684c97711f60f1924600d392"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidature/detail/67e743e40d5282fcad0bcd5d
+        name: Detalle de candidatura
+        meta:
+          id: req_472fac4ca9ee4e37b6a0899f61d9b97e
+          created: 1748386001272
+          modified: 1753730236745
+          isPrivate: false
+          sortKey: -1753730224711
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidature/jobId/
+        name: Listar todas las candidaturas a un trabajo por su ID
+        meta:
+          id: req_720ff45ad73b4d43bd741bb0648d8ad6
+          created: 1749684733408
+          modified: 1753730232024
+          isPrivate: false
+          sortKey: -1753730224761
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "jobId": "6837a1edbaf8826136096245",
+              "page": 1,
+              "pageSize": 100
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3000/api/v1/candidature/status
+        name: Cambiar status de una candidatura
+        meta:
+          id: req_154889c9ab3a4eea8abbafa148a87918
+          created: 1749766496096
+          modified: 1753730224733
+          isPrivate: false
+          sortKey: -1753730224661
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"id" : "685c6f9a648ffa5fe40cffbb",
+            	"stage_id" : "6525804d19774e7e82062b32"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Insomnia_candidate_collections
+    meta:
+      id: fld_2514706eca5b4c65a3d3d2738d327492
+      created: 1753730759259
+      modified: 1753730759259
+      sortKey: -1753730759259
+  - name: Insomnia_company_collections
+    meta:
+      id: fld_be6f2535c2364fb291bf0518580367e5
+      created: 1753730998942
+      modified: 1753730998942
+      sortKey: -1753730998942
+  - name: Insomnia_auth_collections
+    meta:
+      id: fld_7c8e6b2ce75e4151a1429211082ba221
+      created: 1753731154495
+      modified: 1753731154495
+      sortKey: -1753731154495
+  - name: Insomnia_authCompany_collections
+    meta:
+      id: fld_144b0aec34504f2e826f934f7e81b35a
+      created: 1753731223206
+      modified: 1753731223206
+      sortKey: -1753731223206
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533313
+    modified: 1747759533313
+environments:
+  name: Base Environment
+  meta:
+    id: env_34e3fe0fbfa74527d029a078514fce04650ced66
+    created: 1747759533312
+    modified: 1747759533312
+    isPrivate: false
